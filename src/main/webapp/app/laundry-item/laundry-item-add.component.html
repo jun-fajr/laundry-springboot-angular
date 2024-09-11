@@ -1,0 +1,14 @@
+<div class="flex flex-wrap mb-6">
+    <h1 class="grow text-3xl md:text-4xl font-medium mb-2" i18n="@@laundryItem.add.headline">Add Laundry Item</h1>
+    <div>
+        <a routerLink="/laundryItems" class="inline-block text-white bg-gray-500 hover:bg-gray-600 focus:ring-gray-200 focus:ring-4 rounded px-5 py-2" i18n="@@laundryItem.add.back">Back to list</a>
+    </div>
+</div>
+<form [formGroup]="addForm" (ngSubmit)="handleSubmit()">
+    <app-input-row [group]="addForm" field="name" i18n-label="@@laundryItem.name.label" label="Name" />
+    <app-input-row [group]="addForm" field="description" i18n-label="@@laundryItem.description.label" label="Description" />
+    <app-input-row [group]="addForm" field="price" i18n-label="@@laundryItem.price.label" label="Price" />
+    <app-input-row [group]="addForm" field="createdAt" i18n-label="@@laundryItem.createdAt.label" label="Created At" />
+    <app-input-row [group]="addForm" field="updatedAt" i18n-label="@@laundryItem.updatedAt.label" label="Updated At" />
+    <input type="submit" i18n-value="@@laundryItem.add.headline" value="Add Laundry Item" class="inline-block text-white bg-blue-600 hover:bg-blue-700 focus:ring-blue-300  focus:ring-4 rounded px-5 py-2 mt-6" />
+</form>

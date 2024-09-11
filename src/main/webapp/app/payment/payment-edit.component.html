@@ -1,0 +1,16 @@
+<div class="flex flex-wrap mb-6">
+    <h1 class="grow text-3xl md:text-4xl font-medium mb-2" i18n="@@payment.edit.headline">Edit Payment</h1>
+    <div>
+        <a routerLink="/payments" class="inline-block text-white bg-gray-500 hover:bg-gray-600 focus:ring-gray-200 focus:ring-4 rounded px-5 py-2" i18n="@@payment.edit.back">Back to list</a>
+    </div>
+</div>
+<form [formGroup]="editForm" (ngSubmit)="handleSubmit()">
+    <app-input-row [group]="editForm" field="id" rowType="number" i18n-label="@@payment.id.label" label="Id" />
+    <app-input-row [group]="editForm" field="amount" i18n-label="@@payment.amount.label" label="Amount" />
+    <app-input-row [group]="editForm" field="method" i18n-label="@@payment.method.label" label="Method" />
+    <app-input-row [group]="editForm" field="status" i18n-label="@@payment.status.label" label="Status" />
+    <app-input-row [group]="editForm" field="createdAt" i18n-label="@@payment.createdAt.label" label="Created At" />
+    <app-input-row [group]="editForm" field="updatedAt" i18n-label="@@payment.updatedAt.label" label="Updated At" />
+    <app-input-row [group]="editForm" field="order" rowType="select" [options]="orderValues" i18n-label="@@payment.order.label" label="Order" />
+    <input type="submit" i18n-value="@@payment.edit.headline" value="Edit Payment" class="inline-block text-white bg-blue-600 hover:bg-blue-700 focus:ring-blue-300  focus:ring-4 rounded px-5 py-2 mt-6" />
+</form>

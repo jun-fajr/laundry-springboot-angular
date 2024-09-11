@@ -1,0 +1,16 @@
+<div class="flex flex-wrap mb-6">
+    <h1 class="grow text-3xl md:text-4xl font-medium mb-2" i18n="@@orderItem.edit.headline">Edit Order Item</h1>
+    <div>
+        <a routerLink="/orderItems" class="inline-block text-white bg-gray-500 hover:bg-gray-600 focus:ring-gray-200 focus:ring-4 rounded px-5 py-2" i18n="@@orderItem.edit.back">Back to list</a>
+    </div>
+</div>
+<form [formGroup]="editForm" (ngSubmit)="handleSubmit()">
+    <app-input-row [group]="editForm" field="id" rowType="number" i18n-label="@@orderItem.id.label" label="Id" />
+    <app-input-row [group]="editForm" field="quantity" rowType="number" i18n-label="@@orderItem.quantity.label" label="Quantity" />
+    <app-input-row [group]="editForm" field="subtotal" i18n-label="@@orderItem.subtotal.label" label="Subtotal" />
+    <app-input-row [group]="editForm" field="createdAt" i18n-label="@@orderItem.createdAt.label" label="Created At" />
+    <app-input-row [group]="editForm" field="updatedAt" i18n-label="@@orderItem.updatedAt.label" label="Updated At" />
+    <app-input-row [group]="editForm" field="order" rowType="select" [options]="orderValues" i18n-label="@@orderItem.order.label" label="Order" />
+    <app-input-row [group]="editForm" field="laundryItem" rowType="select" [options]="laundryItemValues" i18n-label="@@orderItem.laundryItem.label" label="Laundry Item" />
+    <input type="submit" i18n-value="@@orderItem.edit.headline" value="Edit Order Item" class="inline-block text-white bg-blue-600 hover:bg-blue-700 focus:ring-blue-300  focus:ring-4 rounded px-5 py-2 mt-6" />
+</form>

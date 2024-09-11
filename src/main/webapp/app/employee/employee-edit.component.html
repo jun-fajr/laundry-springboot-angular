@@ -1,0 +1,16 @@
+<div class="flex flex-wrap mb-6">
+    <h1 class="grow text-3xl md:text-4xl font-medium mb-2" i18n="@@employee.edit.headline">Edit Employee</h1>
+    <div>
+        <a routerLink="/employees" class="inline-block text-white bg-gray-500 hover:bg-gray-600 focus:ring-gray-200 focus:ring-4 rounded px-5 py-2" i18n="@@employee.edit.back">Back to list</a>
+    </div>
+</div>
+<form [formGroup]="editForm" (ngSubmit)="handleSubmit()">
+    <app-input-row [group]="editForm" field="id" rowType="number" i18n-label="@@employee.id.label" label="Id" />
+    <app-input-row [group]="editForm" field="name" i18n-label="@@employee.name.label" label="Name" />
+    <app-input-row [group]="editForm" field="email" i18n-label="@@employee.email.label" label="Email" />
+    <app-input-row [group]="editForm" field="phone" i18n-label="@@employee.phone.label" label="Phone" />
+    <app-input-row [group]="editForm" field="role" i18n-label="@@employee.role.label" label="Role" />
+    <app-input-row [group]="editForm" field="createdAt" i18n-label="@@employee.createdAt.label" label="Created At" />
+    <app-input-row [group]="editForm" field="updatedAt" i18n-label="@@employee.updatedAt.label" label="Updated At" />
+    <input type="submit" i18n-value="@@employee.edit.headline" value="Edit Employee" class="inline-block text-white bg-blue-600 hover:bg-blue-700 focus:ring-blue-300  focus:ring-4 rounded px-5 py-2 mt-6" />
+</form>
